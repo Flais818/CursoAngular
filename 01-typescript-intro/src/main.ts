@@ -1,6 +1,6 @@
 import './style.css'
 // import { setupCounter } from './counter.ts'
-import './topics/04-homework-types'
+import './topics/11-optional-chaining'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 hola mundo
