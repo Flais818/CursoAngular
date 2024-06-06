@@ -10,13 +10,12 @@ import { SearchBoxComponent } from './components/search-box/search-box.component
 
 
 
-
 @NgModule({
   declarations: [
     AboutPageComponent,
+    ContactPageComponent,
     HomePageComponent,
     SidebarComponent,
-    ContactPageComponent,
     SearchBoxComponent,
   ],
   imports: [
@@ -25,11 +24,10 @@ import { SearchBoxComponent } from './components/search-box/search-box.component
   ],
   exports: [
     AboutPageComponent,
+    ContactPageComponent,
     HomePageComponent,
     SidebarComponent,
-    ContactPageComponent,
-    SearchBoxComponent
+    SearchBoxComponent,
   ]
 })
-
 export class SharedModule { }

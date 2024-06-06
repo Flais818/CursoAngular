@@ -3,7 +3,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 @Component({
   selector: 'shared-search-box',
   templateUrl: './search-box.component.html',
-  styles: ``
+  styles: [
+  ]
 })
 export class SearchBoxComponent {
 
@@ -13,9 +14,8 @@ export class SearchBoxComponent {
   @Output()
   public onValue = new EventEmitter<string>();
 
-  emitValue( value: string ): void {
+  emitValue( value: string ):void {
     this.onValue.emit( value );
   }
-
 
 }
