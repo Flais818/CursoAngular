@@ -4,7 +4,8 @@ import { catchError, Observable, of, map, tap } from 'rxjs';
 
 import { Country } from '../interfaces/country';
 import { CacheStore } from '../interfaces/cache-store.interface';
-import { CounterComponent } from '../../../../02-bases/src/app/counter/components/count/counter.component';
+import { Region } from '../interfaces/region.type';
+import { JsonPipe } from '@angular/common';
 
 @Injectable({ providedIn: 'root' })
 export class CountriesService {
@@ -17,7 +18,19 @@ export class CountriesService {
     byRegion:    { region: '', countries: [] },
   }
 
-  constructor(private http: HttpClient ) {  }
+  constructor(private http: HttpClient ) {
+    this.loadFromLocalStorage();
+  }
+
+  private saveToLocalStorage() {
+    localStorage.setItem( 'cacheStore', JSON.stringify( this.cacheStore ) );
+  }
+
+  private loadFromLocalStorage() {
+    if( !localStorage.getItem( 'cacheStore')! ) return;
+
+    this.cacheStore = JSON.parse( localStorage.getItem( 'cacheStore' )! );
+  }
 
   private getCountriesReques( url: string ): Observable<Country[]> {
     return this.http.get<Country[]>( url )
@@ -41,18 +54,27 @@ export class CountriesService {
 
     return this.getCountriesReques(url)
         .pipe(
-          tap( countries => this.cacheStore.byCapital = { term, countries })
+          tap( countries => this.cacheStore.byCapital = { term, countries } ),
+          tap (() => this.saveToLocalStorage() ),
         );
   }
 
   searchCountry( term: string ): Observable<Country[]> {
     const url = `${ this.apiUrl }/name/${ term }`;
-    return this.getCountriesReques( url );
+    return this.getCountriesReques( url )
+    .pipe(
+      tap( countries => this.cacheStore.byCountries = { term, countries } ),
+      tap (() => this.saveToLocalStorage() ),
+    );
   }
 
-  searchRegion( region: string ): Observable<Country[]> {
+  searchRegion( region: Region ): Observable<Country[]> {
     const url = `${ this.apiUrl }/region/${ region }`;
-    return this.getCountriesReques( url );
+    return this.getCountriesReques( url )
+    .pipe(
+      tap( countries => this.cacheStore.byRegion = { region, countries } ),
+      tap (() => this.saveToLocalStorage() ),
+    );
   }
 
 
