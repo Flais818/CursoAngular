@@ -1,8 +1,4 @@
 {
-<<<<<<< HEAD
-  "dependencies": {
-    "latest": "^0.2.0"
-=======
   "name": "country-app",
   "version": "0.0.0",
   "scripts": {
@@ -38,6 +34,5 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
     "typescript": "~4.8.2"
->>>>>>> ca67ec552a884e3ca41c0ba40bff1e50d09e8fdd
   }
 }
