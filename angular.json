@@ -3,7 +3,6 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-<<<<<<< HEAD
     "pipesApp": {
       "projectType": "application",
       "schematics": {
@@ -17,35 +16,21 @@
           "standalone": false
         }
       },
-=======
-    "countryApp": {
-      "projectType": "application",
-      "schematics": {},
->>>>>>> 61494afc361acc77612e4fd263cbfd51de71bbc1
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
         "build": {
-<<<<<<< HEAD
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/pipes-app",
             "index": "src/index.html",
             "browser": "src/main.ts",
-=======
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/country-app",
-            "index": "src/index.html",
-            "main": "src/main.ts",
->>>>>>> 61494afc361acc77612e4fd263cbfd51de71bbc1
             "polyfills": [
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-<<<<<<< HEAD
               {
                 "glob": "**/*",
                 "input": "public"
@@ -56,13 +41,6 @@
               "node_modules/primeng/resources/themes/lara-dark-indigo/theme.css",
               "node_modules/primeng/resources/primeng.min.css",
               "node_modules/primeflex/primeflex.min.css"
-=======
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.css"
->>>>>>> 61494afc361acc77612e4fd263cbfd51de71bbc1
             ],
             "scripts": []
           },
@@ -71,7 +49,6 @@
               "budgets": [
                 {
                   "type": "initial",
-<<<<<<< HEAD
                   "maximumWarning": "500kB",
                   "maximumError": "1MB"
                 },
@@ -79,32 +56,14 @@
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kB",
                   "maximumError": "4kB"
-=======
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
->>>>>>> 61494afc361acc77612e4fd263cbfd51de71bbc1
                 }
               ],
               "outputHashing": "all"
             },
             "development": {
-<<<<<<< HEAD
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
-=======
-              "buildOptimizer": false,
-              "optimization": false,
-              "vendorChunk": true,
-              "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
->>>>>>> 61494afc361acc77612e4fd263cbfd51de71bbc1
             }
           },
           "defaultConfiguration": "production"
@@ -113,30 +72,16 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-<<<<<<< HEAD
-              "buildTarget": "pipesApp:build:production"
+
             },
             "development": {
-              "buildTarget": "pipesApp:build:development"
-=======
-              "browserTarget": "countryApp:build:production"
-            },
-            "development": {
-              "browserTarget": "countryApp:build:development"
->>>>>>> 61494afc361acc77612e4fd263cbfd51de71bbc1
+
             }
           },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-<<<<<<< HEAD
           "builder": "@angular-devkit/build-angular:extract-i18n"
-=======
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "countryApp:build"
-          }
->>>>>>> 61494afc361acc77612e4fd263cbfd51de71bbc1
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
@@ -147,15 +92,10 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
-<<<<<<< HEAD
               {
                 "glob": "**/*",
                 "input": "public"
               }
-=======
-              "src/favicon.ico",
-              "src/assets"
->>>>>>> 61494afc361acc77612e4fd263cbfd51de71bbc1
             ],
             "styles": [
               "src/styles.css"
